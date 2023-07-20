@@ -15,7 +15,7 @@ To set up the Music Player application locally, follow these steps:
 1. Clone the repository to your local machine using the following command:
 
    ```
-   git clone https://github.com/your-username/music-player.git
+   https://github.com/metidev/music-player.git
    ```
 
 2. Ensure you have a web server (e.g., Apache, Nginx) and PHP installed on your machine.
