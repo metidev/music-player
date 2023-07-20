@@ -71,7 +71,9 @@ if (isset($message)) {
 }
 ?>
 <section class="form-container">
-    <h3 class="heading">upload music</h3>
+    <h3 class="heading sign">
+        <span class="fast-flicker">u</span>ploa<span class="flicker">d</span> music
+    </h3>
     <form action="" method="post" enctype="multipart/form-data">
         <p>music name <span>*</span></p>
         <input class="input" type="text" name="name" placeholder="Enter music name" required maxlength="100">

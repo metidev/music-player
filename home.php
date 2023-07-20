@@ -19,8 +19,8 @@ include "connect.php";
 </head>
 <body>
 <section class="playlist">
-    <h3 class="heading">
-        music playList
+    <h3 class="heading sign">
+            <span class="fast-flicker">m</span>usi<span class="flicker">c</span> player
     </h3>
     <div class="box-container">
         <a class="add-btn" href="upload_music.php"><i class="fas fa-plus"></i></a>
