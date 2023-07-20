@@ -3,7 +3,7 @@ include "connect.php";
 ?>
 <style>
     <?php
-     include "css/style.css"
+     include "css/style.css";
      ?>
 </style>
 <!doctype html>
