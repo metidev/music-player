@@ -1,12 +1,12 @@
 <?php
 global $conn;
 include "connect.php";
-if (isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $name = filter_var($name, FILTER_SANITIZE_STRING);
     $artist = $_POST['artist'];
     $artist = filter_var($artist, FILTER_SANITIZE_STRING);
-    if (!isset($artist)){
+    if (!isset($artist)) {
         $artist = '';
     }
 
@@ -14,15 +14,15 @@ if (isset($_POST['submit'])){
     $album = filter_var($album, FILTER_SANITIZE_STRING);
     $album_size = $_FILES['album']['size'];
     $album_tmp_name = $_FILES['album']['tmp_name'];
-    $album_folder = 'uploaded_album/'.$album;
+    $album_folder = 'uploaded_album/' . $album;
 
-    if (isset($album)){
-        if ($album_size > 2000000){
+    if (isset($album)) {
+        if ($album_size > 2000000) {
             $message[] = 'album size is too large';
-        }else{
-            move_uploaded_file($album_tmp_name,$album_folder);
+        } else {
+            move_uploaded_file($album_tmp_name, $album_folder);
         }
-    }else{
+    } else {
         $album = "";
     }
 
@@ -30,14 +30,14 @@ if (isset($_POST['submit'])){
     $music = filter_var($music, FILTER_SANITIZE_STRING);
     $music_size = $_FILES['music']['size'];
     $music_tmp_name = $_FILES['music']['tmp_name'];
-    $music_folder = 'uploaded_music/'.$music;
+    $music_folder = 'uploaded_music/' . $music;
 
-    if ($music_size > 100000000){
+    if ($music_size > 100000000) {
         $message[] = 'music size is too large';
-    }else{
+    } else {
         $upload_music = $conn->prepare("INSERT INTO `songs`(name,artist,album,music) VALUES(?,?,?,?)");
-        $upload_music->execute([$name,$artist,$album,$music]);
-        move_uploaded_file($music_tmp_name,$music_folder);
+        $upload_music->execute([$name, $artist, $album, $music]);
+        move_uploaded_file($music_tmp_name, $music_folder);
         $message[] = "new music uploaded";
     }
 }
