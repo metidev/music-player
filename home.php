@@ -58,5 +58,16 @@ include "connect.php";
         ?>
     </div>
 </section>
+<div class="music-player">
+    <i class="fas fa-times" id="close"></i>
+    <div class="box">
+        <img src="images/disc.png" class="album" alt="cover music">
+        <div class="name"></div>
+        <div class="artist"></div>
+        <audio src="" controls class="music"></audio>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
